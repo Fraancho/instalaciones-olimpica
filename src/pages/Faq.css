@@ -1,0 +1,33 @@
+.faq {
+    padding: 2rem;
+    background-color: var(--light-blue);
+    color: var(--dark-gray);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+  }
+  
+  .faq h1 {
+    font-size: 2rem;
+    color: var(--primary-blue);
+    margin-bottom: 1rem;
+  }
+  
+  .faq p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .faq ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .faq ul li {
+    font-size: 1rem;
+    margin: 0.5rem 0;
+    background: white;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  

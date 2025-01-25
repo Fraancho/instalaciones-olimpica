@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  background-color: var(--light-blue); /* Fondo azul claro */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+main {
+  background-color: var(--light-blue); /* Fondo para el área principal */
+  padding: 2rem 0;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+:root {
+  /* Colores principales */
+  --primary-blue: #1e3a8a; /* Azul principal (por ejemplo, para títulos y botones) */
+  --secondary-blue: #2563eb; /* Azul secundario (por ejemplo, para hover o enlaces) */
+  --light-blue: #f0f4ff; /* Azul claro (fondo principal) */
+
+  /* Colores neutrales */
+  --dark-gray: #374151; /* Gris oscuro (texto principal) */
+  --light-gray: #d1d5db; /* Gris claro (bordes e inputs) */
+  --white: #ffffff; /* Blanco (fondo del formulario) */
+
+  /* Colores de énfasis */
+  --success-green: #10b981; /* Verde para mensajes de éxito */
+  --error-red: #ef4444; /* Rojo para mensajes de error */
+  --warning-yellow: #facc15; /* Amarillo para mensajes de advertencia */
+}

@@ -1,0 +1,265 @@
+.content {
+    padding: 2rem;
+    background-color: var(--light-blue);
+    color: var(--dark-gray);
+    font-family: "Arial", sans-serif;
+  }
+  
+  .section {
+    padding: 4rem 2rem; /* Añade espacio interno suficiente */
+    margin-bottom: 2rem; /* Separa las secciones */
+    background-color: white; /* Fondo blanco para distinguirlas */
+    border-radius: 10px; /* Opcional: bordes redondeados */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Opcional: sombra ligera */
+    position: relative; /* Asegura que las secciones se apilen una tras otra */
+    z-index: auto;
+  }
+  
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .section-header .icon {
+    font-size: 2rem;
+    color: var(--primary-blue);
+  }
+  
+  .section h2 {
+    color: var(--primary-blue);
+    font-size: 1.8rem;
+  }
+  
+  .card {
+    background: var(--white);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .card h3 {
+    color: var(--secondary-blue);
+    font-size: 1.4rem;
+  }
+  
+  .card h4 {
+    color: var(--primary-blue);
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .card p {
+    margin: 0.5rem 0 1rem;
+    line-height: 1.5;
+  }
+  
+  .card ul {
+    margin: 1rem 0;
+    padding-left: 2rem;
+  }
+  
+  .card ul li {
+    margin: 0.5rem 0;
+    color: var(--dark-gray);
+  }
+  
+  /* Responsive diseño */
+  @media (max-width: 768px) {
+    .content {
+      padding: 1rem;
+    }
+  
+    .section h2 {
+      font-size: 1.5rem;
+    }
+  
+    .card h3 {
+      font-size: 1.2rem;
+    }
+  
+    .card h4 {
+      font-size: 1rem;
+    }
+  }
+  /* Aplica la fuente globalmente */
+body {
+    font-family: 'Poppins', sans-serif; /* Cambiar por la fuente elegida */
+  }
+  
+  /* Personaliza los textos de las secciones */
+  .section h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600; /* Más grueso */
+    font-size: 2rem;
+    color: var(--primary-blue);
+  }
+  
+  .section h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400; /* Normal */
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    color: var(--secondary-blue);
+  }
+  
+  .section p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300; /* Más ligero */
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+    color: var(--dark-gray);
+  }
+  
+  /* Asegúrate de que las tarjetas tengan un diseño limpio */
+  .card {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    color: var(--dark-gray);
+  }
+ /* Contenedor general de los tipos de tarima */
+.tarima-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  /* Estilo para cada tipo de tarima */
+  .tarima-type {
+    flex: 1 1 calc(50% - 1rem); /* Dos tarjetas por fila */
+    background-color: var(--light-blue); /* Fondo azul claro */
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    align-items: center; /* Alinea el contenido al centro */
+    text-align: center; /* Centra los textos */
+    gap: 0.5rem;
+  }
+  
+  /* Iconos de los tipos de tarima */
+  .tarima-icon {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  /* Títulos de cada tipo */
+  .tarima-type h4 {
+    font-size: 1.2rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  /* Texto descriptivo */
+  .tarima-type p {
+    font-size: 1rem;
+    color: var(--dark-gray);
+    line-height: 1.5;
+  }
+  
+  /* Efecto hover */
+  .tarima-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Responsividad: Estilo para pantallas pequeñas */
+  @media (max-width: 768px) {
+    .tarima-type {
+      flex: 1 1 100%; /* Una tarjeta por fila en pantallas pequeñas */
+      text-align: left; /* Opcional: alinear texto a la izquierda en móviles */
+      align-items: flex-start; /* Opcional: alinear elementos a la izquierda en móviles */
+    }
+  }
+  /* Estilo del enlace de Preguntas Frecuentes */
+.faq-link {
+    margin-top: 1.5rem;
+    text-align: center;
+  }
+  
+  .faq-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary-blue); /* Color de fondo */
+    color: black; /* Color del texto */
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .faq-button:hover {
+    background-color: var(--primary-blue); /* Fondo al pasar el ratón */
+    color: rgb(31, 30, 30); /* Color del texto al pasar el ratón */
+    transform: scale(1.05);
+  }
+  /* Estilo para los enlaces de tipos de tarima */
+.tarima-link {
+    text-decoration: none;
+    color: var(--primary-blue); /* Color inicial */
+    transition: color 0.3s ease;
+    font-weight: bold;
+  }
+  
+  .tarima-link:hover {
+    color: var(--secondary-blue); /* Color al pasar el ratón */
+    text-decoration: underline; /* Subrayado al pasar el ratón */
+  }
+  /* Contenedor general de los tipos de puertas */
+  .door-types {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .door-type {
+    flex: 1 1 calc(50% - 1rem);
+    background: var(--light-blue);
+    padding: 1rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .door-icon {
+    font-size: 2.5rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.5rem;
+  }
+  
+  .door-type:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  
+  /* Estilo para los enlaces de los tipos de puertas */
+  .door-link {
+    text-decoration: none;
+    color: var(--primary-blue);
+    font-weight: bold;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .door-link:hover {
+    color: var(--secondary-blue);
+    transform: scale(1.05);
+  }
+  
