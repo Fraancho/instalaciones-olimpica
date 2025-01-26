@@ -1,51 +1,31 @@
-/* Estilos principales del Header */
+/* Estilo general del header */
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center; /* Centra el contenido horizontalmente */
   align-items: center;
-  padding: 15px 15px;
+  padding: 15px 30px;
   background: linear-gradient(to right, #0047ab, #1e90ff);
   color: white;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
-  position: sticky; /* Se queda fijo en la parte superior */
+  position: sticky; /* Fijo en la parte superior al hacer scroll */
   top: 0;
   z-index: 1000;
-  transition: background 0.3s ease; /* Transición suave para cambios de fondo */
-  margin: 0; /* Asegúrate de que no haya margen superior */
-}
-main {
-  margin: 0; /* Elimina los márgenes */
-  padding: 0; /* Opcional: elimina el padding si no es necesario */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
 }
 
-.header.scrolled {
-  background: rgba(0, 71, 171, 0.95); /* Fondo ligeramente más oscuro al hacer scroll */
-}
-
-/* Estilos para el Logo */
+/* Estilo del logo */
 .logo {
-  max-width: 180px;
-  height: auto;
-  display: flex;
-  align-items: center;
-  font-size: 1.8rem;
+  position: absolute;
+  left: 30px; /* Coloca el logo en la esquina izquierda */
+  font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
 }
 
-.logo img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Estilos para los Enlaces de Navegación */
+/* Estilo de los enlaces en modo web */
 .nav-links {
   display: flex;
-  gap: 25px;
-  align-items: center;
+  gap: 30px;
   list-style: none;
-  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links a {
@@ -53,49 +33,44 @@ main {
   font-size: 1rem;
   color: white;
   font-weight: 500;
-  position: relative;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: #ffcc00;
+  color: #ffcc00; /* Cambia el color al pasar el mouse */
 }
 
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  bottom: -5px;
-  left: 50%;
-  width: 0;
-  height: 2px;
-  background: #ffcc00;
-  transition: width 0.3s ease, left 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-/* Estilos para el Menú Hamburguesa */
+/* Menú hamburguesa (escondido en modo web) */
 .menu-toggle {
   display: none;
-  font-size: 2rem;
-  color: white;
   background: none;
   border: none;
+  font-size: 2rem;
+  color: white;
   cursor: pointer;
-  z-index: 1100;
 }
 
-/* Media Query para Móviles */
+/* Media Query: Ajustes para móviles */
 @media (max-width: 768px) {
-  .menu-toggle {
-    display: block; /* Mostrar botón hamburguesa */
+  .header {
+    justify-content: space-between; /* El logo y el menú hamburguesa estarán en extremos */
+    padding: 10px 20px;
   }
 
+  /* Centra el logo en móviles */
+  .logo {
+    position: static;
+    margin-right: auto;
+  }
+
+  /* Menú hamburguesa visible en móviles */
+  .menu-toggle {
+    display: block;
+  }
+
+  /* Ocultar los enlaces por defecto */
   .nav-links {
-    display: flex;
+    display: none;
     flex-direction: column;
     gap: 15px;
     position: absolute;
@@ -105,18 +80,15 @@ main {
     background: rgba(0, 71, 171, 0.95);
     padding: 15px 0;
     text-align: center;
-    transform: translateY(-100%);
-    opacity: 0;
-    pointer-events: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
+  /* Mostrar los enlaces cuando se abra el menú */
   .nav-links.open {
-    transform: translateY(0);
-    opacity: 1;
-    pointer-events: auto;
+    display: flex;
   }
 
   .nav-links a {
-    font-size: 1.2rem;
+    font-size: 1.2rem; /* Ajusta el tamaño para móviles */
   }
 }
