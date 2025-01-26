@@ -1,31 +1,29 @@
-/* Estilo general del header */
+/* Header General */
 .header {
   display: flex;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: space-between;
   align-items: center;
   padding: 15px 30px;
   background: linear-gradient(to right, #0047ab, #1e90ff);
   color: white;
-  position: sticky; /* Fijo en la parte superior al hacer scroll */
+  position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilo del logo */
+/* Logo */
 .logo {
-  position: absolute;
-  left: 30px; /* Coloca el logo en la esquina izquierda */
   font-size: 1.5rem;
   font-weight: bold;
-  cursor: pointer;
 }
 
-/* Estilo de los enlaces en modo web */
+/* Navegación General */
 .nav-links {
   display: flex;
-  gap: 30px;
+  gap: 20px;
   list-style: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .nav-links a {
@@ -37,12 +35,12 @@
 }
 
 .nav-links a:hover {
-  color: #ffcc00; /* Cambia el color al pasar el mouse */
+  color: #ffcc00;
 }
 
-/* Menú hamburguesa (escondido en modo web) */
+/* Menú Hamburguesa */
 .menu-toggle {
-  display: none;
+  display: none; /* Solo se muestra en móviles */
   background: none;
   border: none;
   font-size: 2rem;
@@ -50,25 +48,18 @@
   cursor: pointer;
 }
 
-/* Media Query: Ajustes para móviles */
+/* Media Queries: Ajustes para móviles */
 @media (max-width: 768px) {
   .header {
-    justify-content: space-between; /* El logo y el menú hamburguesa estarán en extremos */
-    padding: 10px 20px;
+    justify-content: space-between; /* Logo a la izquierda, botón hamburguesa a la derecha */
   }
 
-  /* Centra el logo en móviles */
-  .logo {
-    position: static;
-    margin-right: auto;
-  }
-
-  /* Menú hamburguesa visible en móviles */
+  /* Menú Hamburguesa visible */
   .menu-toggle {
     display: block;
   }
 
-  /* Ocultar los enlaces por defecto */
+  /* Ocultar enlaces por defecto */
   .nav-links {
     display: none;
     flex-direction: column;
@@ -83,12 +74,14 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   }
 
-  /* Mostrar los enlaces cuando se abra el menú */
+  /* Mostrar enlaces cuando el menú está abierto */
   .nav-links.open {
     display: flex;
   }
 
+  /* Enlaces en móvil */
   .nav-links a {
-    font-size: 1.2rem; /* Ajusta el tamaño para móviles */
+    font-size: 1.2rem;
+    padding: 10px 0;
   }
 }
