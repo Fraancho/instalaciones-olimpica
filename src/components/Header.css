@@ -1,110 +1,122 @@
+/* Estilos principales del Header */
 .header {
-    position: fixed;
-    top: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 15px;
+  background: linear-gradient(to right, #0047ab, #1e90ff);
+  color: white;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil para dar profundidad */
+  position: sticky; /* Se queda fijo en la parte superior */
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s ease; /* Transición suave para cambios de fondo */
+  margin: 0; /* Asegúrate de que no haya margen superior */
+}
+main {
+  margin: 0; /* Elimina los márgenes */
+  padding: 0; /* Opcional: elimina el padding si no es necesario */
+}
+
+.header.scrolled {
+  background: rgba(0, 71, 171, 0.95); /* Fondo ligeramente más oscuro al hacer scroll */
+}
+
+/* Estilos para el Logo */
+.logo {
+  max-width: 180px;
+  height: auto;
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Estilos para los Enlaces de Navegación */
+.nav-links {
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  list-style: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-links a {
+  text-decoration: none;
+  font-size: 1rem;
+  color: white;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffcc00;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #ffcc00;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* Estilos para el Menú Hamburguesa */
+.menu-toggle {
+  display: none;
+  font-size: 2rem;
+  color: white;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* Media Query para Móviles */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block; /* Mostrar botón hamburguesa */
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    position: absolute;
+    top: 60px;
     left: 0;
     width: 100%;
-    background: linear-gradient(to bottom, rgba(30, 58, 138, 0.9), rgba(30, 58, 138, 0.7));
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    z-index: 1000;
+    background: rgba(0, 71, 171, 0.95);
+    padding: 15px 0;
+    text-align: center;
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
   }
-  
-  .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
+
+  .nav-links.open {
+    transform: translateY(0);
+    opacity: 1;
+    pointer-events: auto;
   }
-  
-  .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: white;
+
+  .nav-links a {
+    font-size: 1.2rem;
   }
-  
-  .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-  }
-  
-  .nav-links li a {
-    text-decoration: none;
-    color: white;
-    font-size: 1rem;
-    transition: color 0.3s ease;
-  }
-  
-  .nav-links li a:hover {
-    color: #3b82f6;
-  }
-  .navbar .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-  }
-  nav {
-    display: flex;
-    gap: 20px;
-  }
-  
-  nav a {
-    text-decoration: none;
-    font-size: 1rem;
-    color: white;
-  }
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column; /* Cambia a diseño vertical */
-      align-items: center;
-      padding: 10px;
-    }
-  
-    nav {
-      flex-direction: column; /* Cambia los enlaces a una columna */
-      gap: 10px;
-    }
-  
-    nav a {
-      font-size: 0.9rem; /* Reduce el tamaño de los enlaces */
-    }
-  }
-  @media (max-width: 768px) {
-    header {
-      flex-direction: column; /* Cambia a diseño vertical */
-      align-items: center;
-      padding: 10px;
-    }
-  
-    nav {
-      flex-direction: column; /* Cambia los enlaces a una columna */
-      gap: 10px;
-    }
-  
-    nav a {
-      font-size: 0.9rem; /* Reduce el tamaño de los enlaces */
-    }
-    .menu-toggle {
-      display: block; /* Mostrar botón hamburguesa en móviles */
-    }
-  
-    .nav-links {
-      display: none; /* Ocultar enlaces por defecto */
-      flex-direction: column;
-      gap: 10px;
-      position: absolute;
-      top: 60px;
-      left: 0;
-      width: 100%;
-      background: rgba(0, 71, 171, 0.9);
-      padding: 10px 0;
-      text-align: center;
-    }
-  
-    .nav-links.open {
-      display: flex; /* Mostrar enlaces al abrir el menú */
-    }
-  
-    .nav-links a {
-      font-size: 1rem;
-      padding: 10px 0;
-    }
-  }
+}

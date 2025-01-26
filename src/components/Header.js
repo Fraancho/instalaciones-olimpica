@@ -1,13 +1,30 @@
-import React from "react";
-import React, { useState } from "react";
-import "./Header.css"; // Archivo CSS para estilos
+import React, { useState, useEffect } from "react";
+import "./Header.css"; // Archivo CSS
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="main-header">
-      <div className="logo">Instalaciones Olímpica</div>
+    <header className={`header ${scrolled ? "scrolled" : ""}`}>
+      <div className="logo">
+        <img src="/path-to-your-logo.png" alt="Instalaciones Olímpica Logo" />
+      </div>
       <button
         className="menu-toggle"
         onClick={() => setMenuOpen(!menuOpen)}

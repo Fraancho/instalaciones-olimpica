@@ -1,4 +1,5 @@
 import React from "react";
+import logo from './favico.webp';
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import MainHeader from "./components/MainHeader";
 import SecondaryHeader from "./components/SecondaryHeader";
@@ -20,7 +21,7 @@ import Contact from "./pages/Contact";
 const App = () => {
   return (
     <Router>
-      <main style={{ paddingTop: "80px" }}>
+      <main>
         <Routes>
           <Route path="/" element={<div><MainHeader /><Banner /><Content /></div>} />
           <Route path="/preguntas-frecuentes" element={<div><SecondaryHeader /><Faq /></div>} />
