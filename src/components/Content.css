@@ -69,6 +69,42 @@
   /* Responsive diseño */
   @media (max-width: 768px) {
     .content {
+      padding: 10px; /* Reduce los márgenes/padding para móviles */
+    }
+  
+    .section {
+      margin-bottom: 20px;
+    }
+  
+    .section-header {
+      flex-direction: column; /* Ajusta el diseño a una sola columna */
+      text-align: center;
+    }
+  
+    .icon {
+      font-size: 40px; /* Ajusta el tamaño del ícono */
+      margin-bottom: 10px;
+    }
+  
+    .card {
+      padding: 15px;
+      font-size: 14px; /* Reduce el tamaño de la fuente */
+    }
+  
+    .tarima-type,
+    .door-type {
+      flex-direction: column; /* Cambia de filas a columnas */
+      align-items: center;
+      text-align: center;
+    }
+  
+    .tarima-icon,
+    .door-icon {
+      margin-bottom: 10px;
+    }
+  }
+  @media (max-width: 768px) {
+    .content {
       padding: 1rem;
     }
   

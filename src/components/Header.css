@@ -41,4 +41,70 @@
     font-size: 1.5rem;
     font-weight: bold;
   }
+  nav {
+    display: flex;
+    gap: 20px;
+  }
   
+  nav a {
+    text-decoration: none;
+    font-size: 1rem;
+    color: white;
+  }
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column; /* Cambia a diseño vertical */
+      align-items: center;
+      padding: 10px;
+    }
+  
+    nav {
+      flex-direction: column; /* Cambia los enlaces a una columna */
+      gap: 10px;
+    }
+  
+    nav a {
+      font-size: 0.9rem; /* Reduce el tamaño de los enlaces */
+    }
+  }
+  @media (max-width: 768px) {
+    header {
+      flex-direction: column; /* Cambia a diseño vertical */
+      align-items: center;
+      padding: 10px;
+    }
+  
+    nav {
+      flex-direction: column; /* Cambia los enlaces a una columna */
+      gap: 10px;
+    }
+  
+    nav a {
+      font-size: 0.9rem; /* Reduce el tamaño de los enlaces */
+    }
+    .menu-toggle {
+      display: block; /* Mostrar botón hamburguesa en móviles */
+    }
+  
+    .nav-links {
+      display: none; /* Ocultar enlaces por defecto */
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 100%;
+      background: rgba(0, 71, 171, 0.9);
+      padding: 10px 0;
+      text-align: center;
+    }
+  
+    .nav-links.open {
+      display: flex; /* Mostrar enlaces al abrir el menú */
+    }
+  
+    .nav-links a {
+      font-size: 1rem;
+      padding: 10px 0;
+    }
+  }

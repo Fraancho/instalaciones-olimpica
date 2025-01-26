@@ -1,17 +1,25 @@
 import React from "react";
+import React, { useState } from "react";
 import "./Header.css"; // Archivo CSS para estilos
 
 const Header = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <header className="header">
-      <nav className="navbar">
-        <h1 className="logo">Instalaciones Olímpica</h1>
-        <ul className="nav-links">
-          <li><a href="#tarimas">Tarimas</a></li>
-          <li><a href="#puertas">Puertas</a></li>
-          <li><a href="#marcas">Marcas</a></li>
-          <li><a href="/contacto">Contacto</a></li>
-        </ul>
+    <header>
+      <div className="logo">Instalaciones Olímpica</div>
+      <button
+        className="menu-toggle"
+        onClick={() => setMenuOpen(!menuOpen)}
+        aria-label="Abrir menú"
+      >
+        ☰
+      </button>
+      <nav className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <a href="#tarimas">Tarimas</a>
+        <a href="#puertas">Puertas</a>
+        <a href="#marcas">Marcas</a>
+        <a href="#contacto">Contacto</a>
       </nav>
     </header>
   );
