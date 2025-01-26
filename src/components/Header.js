@@ -6,7 +6,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header>
+    <header className="main-header">
       <div className="logo">Instalaciones Olímpica</div>
       <button
         className="menu-toggle"
